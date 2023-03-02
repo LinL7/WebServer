@@ -6,12 +6,14 @@ Config::Config(){
 
     close_log = 0;
 
+    sql_num = 8;
+
 }
 
 void Config::parse_arg(int argc, char* argv[])
 {
     int opt;
-    const char *str = "l:c:";
+    const char *str = "l:c:s:";
     while((opt = getopt(argc, argv, str)) != -1)
     {
         switch(opt)
@@ -24,6 +26,11 @@ void Config::parse_arg(int argc, char* argv[])
         case 'c':
         {
             close_log = atoi(optarg);
+            break;
+        }
+        case 's':
+        {
+            sql_num = atoi(optarg);
             break;
         }
         default:

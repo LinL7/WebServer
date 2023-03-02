@@ -17,6 +17,8 @@ public:
     int LOGWrite;
 
     int close_log;
+    
+    int sql_num;
 };
 
 #endif
